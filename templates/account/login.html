@@ -7,6 +7,11 @@
 
 {% block content %}
 
+{% block content %}
+  <h2>My Social Login Homepage</h2>
+  <p>Hi {{ user.username }}!</p>
+{% endblock %}
+
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
@@ -27,6 +32,10 @@
         {% endif %}
         <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
       </form>
+      <br>
+    <p><strong>-- OR --</strong></p>
+    <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+{% endblock content %} 
     </div>
   </div>
 </div>
